@@ -202,6 +202,12 @@ span:nth-child(2) .form-box:active{
   }
 }
 
+.form-controll {
+  display: none;
+}
+.child_task-field {
+  display: none;
+}
 .task-box__second {
   width: 90%;
   height: 50px;
