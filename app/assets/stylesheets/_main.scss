@@ -1,0 +1,308 @@
+@charset 'utf-8';
+$theme-color: #377D6A;
+$box-color: #efefef;
+
+
+.index-wrapper {
+  height: 1000px;
+  min-width: 1000px;
+  padding: 20px;
+  width: 100%;
+}
+
+.title {
+  color: #555555;
+  font-size: 30px;
+  text-align: center;
+  margin: 30px auto;
+  letter-spacing: 7px;
+  font-weight: bold;
+}
+
+
+/* --------------------------------
+ * タスク登録フォーム
+ * -------------------------------- */
+
+.task-registration-field {
+  width: 600px;
+  margin: 10px auto;
+  position: relative;
+}
+
+.form-box {
+  display: inline-block;
+  width: 520px;
+  padding: 10px 0 10px 15px;
+  font-family: "Open Sans", sans;
+  font-weight: 400;
+  color: #377D6A;
+  background: #efefef;
+  border: 0;
+  border-radius: 3px;
+  outline: 0;
+  text-indent: 65px; // Arbitrary.
+  transition: all .3s ease-in-out;
+
+  &::-webkit-input-placeholder {
+    color: #efefef;
+    text-indent: 0;
+    font-weight: 300;
+  }
+
+  + .form-name {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 15px;
+    text-shadow: 0 1px 0 rgba(19,74,70,.4);
+    background: #7AB893;
+    transition: all .4s ease-in-out;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    transform-origin: left bottom;
+    z-index: 99;
+    color: white;
+    font-weight: bold;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: 3px;
+      background: $theme-color;
+      transform-origin: left bottom;
+      transition: all .4s ease-in-out;
+      pointer-events: none;
+      z-index: -1;
+    }
+    &:before {
+      background: rgba(3,36,41,.2);
+      z-index: -2;
+      right: 20%;
+    }
+  }
+}
+
+span:nth-child(2) .form-box {
+  text-indent: 85px;
+}
+span:nth-child(2) .form-box:focus,
+span:nth-child(2) .form-box:active{
+  text-indent: 0;
+}
+.form-box:focus,
+.form-box:active {
+  color: $theme-color;
+  text-indent: 0;
+  background: #fff;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+
+  &::-webkit-input-placeholder {
+    color: #aaa;
+    font-size: 15px;
+  }
+  + .form-name {
+    transform: rotate(-66deg);
+    border-radius: 3px;
+
+    &:before {
+      transform: rotate(10deg);
+    }
+  }
+}
+
+.form-button {
+  position: absolute;
+  padding: 10px 15px;
+  border: none;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin: 0 0 0 -10px;
+  background: $theme-color;
+  color: white;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  text-shadow: 0 1px 0 rgba(19,74,70,.4);
+}
+
+
+/* --------------------------------
+ * タスク一覧
+ * -------------------------------- */
+
+
+.task-field {
+  width: 100%;
+  margin-top: 20px;
+  border-top: 2px solid gray;
+}
+
+.task-box-area {
+  width: 1000px;
+  padding-top: 20px;
+  margin: 0 auto;
+}
+
+
+.task-box {
+  width: 100%;
+  height: 50px;
+  border-radius: 3px;
+  background: $box-color;
+  margin-bottom: 10px;
+  position: relative;
+  display: flex;
+  &__status {
+    width: 50px;
+    height: 100%;
+    background: $theme-color;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+  &__name {
+    display: flex;
+    align-items: center;
+    width: 500px;
+    height: 100%;
+    padding-left: 10px;
+    p {
+      letter-spacing: 1px;
+      font-size: 20px;
+      color: #555555;
+    }
+  }
+  &__func {
+    width: 120px;
+    height: 100%;
+    background: $theme-color;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    position: absolute;
+    right: 0;
+    display: flex;
+    &__icon {
+      width: 40px;
+      height: 50px;
+      color: white;
+      padding-top: 12px;
+      padding-left: 5px;
+      vertical-align: middle;
+      i {
+        color: white;
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+
+.task-box__second {
+  width: 90%;
+  height: 50px;
+  border-radius: 3px;
+  background: $box-color;
+  margin-bottom: 10px;
+  margin-left: auto;
+  position: relative;
+  display: flex;
+  &__status {
+    width: 50px;
+    height: 100%;
+    background: $theme-color;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+  &__name {
+    display: flex;
+    align-items: center;
+    width: 500px;
+    height: 100%;
+    padding-left: 10px;
+    p {
+      letter-spacing: 1px;
+      font-size: 20px;
+      color: #555555;
+    }
+  }
+  &__func {
+    width: 120px;
+    height: 100%;
+    background: $theme-color;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    position: absolute;
+    right: 0;
+    display: flex;
+    &__icon {
+      width: 40px;
+      height: 50px;
+      color: white;
+      padding-top: 12px;
+      padding-left: 5px;
+      vertical-align: middle;
+      i {
+        color: white;
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+
+.task-box__third {
+  width: 80%;
+  height: 50px;
+  border-radius: 3px;
+  background: $box-color;
+  margin-bottom: 10px;
+  margin-left: auto;
+  position: relative;
+  display: flex;
+  &__status {
+    width: 50px;
+    height: 100%;
+    background: $theme-color;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+  &__name {
+    display: flex;
+    align-items: center;
+    width: 500px;
+    height: 100%;
+    padding-left: 10px;
+    p {
+      letter-spacing: 1px;
+      font-size: 20px;
+      color: #555555;
+    }
+  }
+  &__func {
+    width: 120px;
+    height: 100%;
+    background: $theme-color;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    position: absolute;
+    right: 0;
+    display: flex;
+    &__icon {
+      width: 40px;
+      height: 50px;
+      color: white;
+      padding-top: 12px;
+      padding-left: 5px;
+      vertical-align: middle;
+      i {
+        color: white;
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+
