@@ -12,49 +12,56 @@
   .task-field
     .task-box-area
       - @tasks.each do |task|
-        .task-box
-          .task-box__status
-          .task-box__name
-            %p
-              = task.task
-          .task-box__deadline
-          .task-box__func
-            .task-box__func__icon
-              %i.fa.fa-plus-square.fa-fw
-            .task-box__func__icon
-              %i.fa.fa-edit.fa-fw
-            .task-box__func__icon
-              = link_to task_path(task), method: :delete, data: {confirm: "are you sure?"} do
-                %i.fa.fa-trash.fa-fw
-      .task-box__second
-        .task-box__second__status
-        .task-box__second__name
-        .task-box__second__deadline
-        .task-box__second__func
-          .task-box__second__func__icon
-            %i.fa.fa-plus-square.fa-fw
-          .task-box__second__func__icon
-            %i.fa.fa-edit.fa-fw
-          .task-box__second__func__icon
-            = link_to "#", method: :delete do
-              %i.fa.fa-trash.fa-fw
-      .task-box__third
-        .task-box__third__status
-        .task-box__third__name
-        .task-box__third__deadline
-        .task-box__third__func
-          .task-box__third__func__icon
-            %i.fa.fa-plus-square.fa-fw
-          .task-box__third__func__icon
-            %i.fa.fa-edit.fa-fw
-          .task-box__third__func__icon
-            = link_to "#", method: :delete do
-              %i.fa.fa-trash.fa-fw
+        .task-box-wrapper
+          .task-box
+            .task-box__status
+            .task-box__name
+              %p
+                = task.task
+            .task-box__deadline
+            .task-box__func
+              .task-box__func__icon
+                %i.fa.fa-plus-square.fa-fw
+              .task-box__func__icon
+                %i.fa.fa-edit.fa-fw
+              .task-box__func__icon
+                = link_to task_path(task), method: :delete, data: {confirm: "are you sure?"} do
+                  %i.fa.fa-trash.fa-fw
+          .task-registration-field.form-controll
+            = form_for [task, task.child_tasks.build], html: {class: 'child_task-form'} do |c|
+              .task-registration-box
+                %span
+                  =c.text_field :title, placeholder: "what is your task?", class: "form-box"
+                  =c.label :title, class: "form-name"
+                  =c.hidden_field :type, value: "0"
+                  =c.submit "Create!", class: "form-button"
+        .child_task-field
+          - task.child_tasks.each do |child_task|
+            .task-box__second
+              .task-box__second__status
+              .task-box__second__name
+                %p
+                  =child_task.title
+              .task-box__second__deadline
+              .task-box__second__func
+                .task-box__second__func__icon
+                  %i.fa.fa-plus-square.fa-fw
+                .task-box__second__func__icon
+                  %i.fa.fa-edit.fa-fw
+                .task-box__second__func__icon
+                  = link_to "#", method: :delete, data: {confirm: "are you sure?"} do
+                    %i.fa.fa-trash.fa-fw
+      / .task-box__third
+      /   .task-box__third__status
+      /   .task-box__third__name
+      /   .task-box__third__deadline
+      /   .task-box__third__func
+      /     .task-box__third__func__icon
+      /       %i.fa.fa-plus-square.fa-fw
+      /     .task-box__third__func__icon
+      /       %i.fa.fa-edit.fa-fw
+      /     .task-box__third__func__icon
+      /       = link_to "#", method: :delete do
+      /         %i.fa.fa-trash.fa-fw
 
 
-      .task-box0
-        .task-box1
-          .task-box2
-      .task-box0
-        .task-box1
-          .task-box2
