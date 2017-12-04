@@ -1,9 +1,9 @@
 $(function(){
   $('.fa-plus-square').on('click', function(){
-    $('.form-controll').slideToggle(500);
+    $(this).parent().parent().parent().next('.form-controll').slideToggle(300);
   });
   $('.task-box__name').on('click', function(){
-    $('.child_task-field').slideToggle(800);
+    $(this).parent().parent().next().toggle('slow');
   });
   // $('child_task-form').on('submit', function(){
   //   console.log("aaa");
