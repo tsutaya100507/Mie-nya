@@ -22,5 +22,6 @@
           =c.hidden_field :type, value: "0"
           =c.submit "Create!", class: "form-button"
 .child_task-field
+  -# 子タスクを表示。_child_task.html.hamlをレンダリング。.first(task.child_tasks.length-1)で繰返し回数を制御
   -task.child_tasks.first(task.child_tasks.length-1).each do |child_task|
-    = render "child_task", child_task: child_task
+    = render "child_task", child_task: child_task,task: task
