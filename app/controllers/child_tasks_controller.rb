@@ -15,6 +15,15 @@ class ChildTasksController < ApplicationController
     redirect_to root_path
   end
 
+  def toggle
+    # ↓redirect_to root_pathと同義
+    render nothing: true
+    @child_task = ChildTask.find(params[:id])
+    # ↓child_taskのdoneの値をひっくり返す
+    @child_task.done = !@child_task.done
+    @child_task.save
+  end
+
   private
 
     def child_task_params
