@@ -1,0 +1,14 @@
+.task-box__second
+  .task-box__second__status
+  .task-box__second__name
+    %p
+      = child_task.title
+  .task-box__second__deadline
+  .task-box__second__func
+    .task-box__second__func__icon
+      %i.fa.fa-plus-square.fa-fw
+    .task-box__second__func__icon
+      %i.fa.fa-edit.fa-fw
+    .task-box__second__func__icon
+      = link_to "#", method: :delete, data: {confirm: "are you sure?"} do
+        %i.fa.fa-trash.fa-fw

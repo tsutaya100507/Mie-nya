@@ -1,0 +1,26 @@
+.task-box-wrapper
+  .task-box
+    .task-box__status
+    .task-box__name
+      %p
+        = task.task
+    .task-box__deadline
+    .task-box__func
+      .task-box__func__icon
+        %i.fa.fa-plus-square.fa-fw
+      .task-box__func__icon
+        %i.fa.fa-edit.fa-fw
+      .task-box__func__icon
+        = link_to task_path(task), method: :delete, data: {confirm: "are you sure?"} do
+          %i.fa.fa-trash.fa-fw
+  .task-registration-field.form-controll
+    = form_for [task, task.child_tasks.build], html: {class: 'child_task-form'} do |c|
+      .task-registration-box
+        %span
+          =c.text_field :title, placeholder: "what is your task?", class: "form-box"
+          =c.label :title, class: "form-name"
+          =c.hidden_field :type, value: "0"
+          =c.submit "Create!", class: "form-button"
+.child_task-field
+  -task.child_tasks.first(task.child_tasks.length-1).each do |child_task|
+    = render "child_task", child_task: child_task

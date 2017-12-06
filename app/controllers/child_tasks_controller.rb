@@ -10,7 +10,7 @@ class ChildTasksController < ApplicationController
   end
 
   def destroy
-    @child_task = Child_task.find(params[:id])
+    @child_task = ChildTask.find(params[:id])
     @child_task.destroy
     redirect_to root_path
   end
