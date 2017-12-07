@@ -3,8 +3,15 @@ class ChildTasksController < ApplicationController
   def create
     @task = Task.find(params[:task_id])
     @child_task = @task.child_tasks.create(child_task_params)
+  #   respond_to do |format|
+  #     if @child_task.save
+  #       format.html {render root_path}
+  #       format.js
+  #     else
     redirect_to root_path
-  end
+  #   end
+  # end
+end
 
   def edit
   end
