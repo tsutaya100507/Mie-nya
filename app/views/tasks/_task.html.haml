@@ -1,4 +1,4 @@
-.task-box-wrapper
+.task-box-wrapper.item{data: { model_name: task.class.name.underscore, update_url: task_sort_path(task) }}
   .task-box
     .task-box__status
     .task-box__name
@@ -21,7 +21,7 @@
           =c.label :title, class: "form-name"
           =c.hidden_field :type, value: "0"
           =c.submit "Create!", class: "form-button"
-.child_task-field#ajax-childtask-create
-  -# 子タスクを表示。_child_task.html.hamlをレンダリング。.first(task.child_tasks.length-1)で繰返し回数を制御
-  -task.child_tasks.first(task.child_tasks.length-1).each do |child_task|
-    = render "child_task", child_task: child_task,task: task
+  .child_task-field#ajax-childtask-create
+    -# 子タスクを表示。_child_task.html.hamlをレンダリング。.first(task.child_tasks.length-1)で繰返し回数を制御
+    -task.child_tasks.first(task.child_tasks.length-1).each do |child_task|
+      = render "child_task", child_task: child_task,task: task
