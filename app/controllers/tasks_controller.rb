@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   def index
     @task = Task.new
-    @tasks = Task.all
+    @tasks = Task.rank(:row_order)
   end
 
   def create
