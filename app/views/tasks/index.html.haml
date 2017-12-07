@@ -1,7 +1,7 @@
 .index-wrapper
   %h1.title Mienya
   .task-registration-field
-    = form_for @task do |f|
+    = form_for @task, remote: true do |f|
       .task-registration-box
         %span
           =f.text_field :task, placeholder: "what is your task?", class: "form-box"
@@ -10,7 +10,7 @@
           =f.submit "Create!", class: "form-button"
 
   .task-field
-    .task-box-area
+    .task-box-area#ajax-create
       -# _task.html.hamlをレンダリング
       = render @tasks
 

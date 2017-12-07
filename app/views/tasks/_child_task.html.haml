@@ -1,7 +1,7 @@
 .task-box__second
   .task-box__second__status
-    = check_box_tag '', '', child_task.done, 'data-id': child_task.id, 'data-task_id': child_task.task_id, id: "checkbox"
-    = label_tag "checkbox", "", class: "check_css"
+    = check_box_tag '', '', child_task.done, 'data-id': child_task.id, 'data-task_id': child_task.task_id, id: "checkbox#{child_task.id}"
+    = label_tag "checkbox#{child_task.id}", "", class: "check_css"
   .task-box__second__name
     %p
       = child_task.title
