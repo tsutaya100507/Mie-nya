@@ -28,8 +28,18 @@ class TasksController < ApplicationController
     redirect_to root_path
   end
 
+  def sort
+    task = Task.find(params[:id])
+    task.update(task_row_params)
+    render nothing: true
+  end
+
   private
   def task_params
     params.require(:task).permit(:task, :type)
+  end
+
+  def task_row_params
+    params.require(:task).permit(:task, :row_order_position)
   end
 end
