@@ -29,7 +29,7 @@ class TasksController < ApplicationController
   end
 
   def sort
-    task = Task.find(params[:id])
+    task = Task.find(params[:task_id])
     task.update(task_row_params)
     render nothing: true
   end
