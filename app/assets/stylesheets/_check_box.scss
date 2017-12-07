@@ -1,0 +1,62 @@
+// デフォルトのスタイルを消去
+input[type=checkbox] {
+  display: none;
+}
+.check_css {
+  -webkit-transition: background-color 0.2s linear;
+  transition: background-color 0.5s linear;
+  position: relative;
+  display: inline-block;
+  padding: 0 0 0 42px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+// カーソルのせると色がつきます。
+.check_css:hover:after {
+  border-color: #000063;
+}
+.check_css:hover:before {
+  border-color: #DDFFFF;
+}
+
+// 擬似要素でチェックボックスの枠を指定してます。
+.check_css:after {
+  -webkit-transition: border-color 0.2s linear;
+  transition: border-color 0.2s linear;
+  position: absolute;
+  top: 50%;
+  left: 11px;
+  display: block;
+  margin-top: 1px;
+  width: 22px;
+  height: 22px;
+  border: 3px solid #003263;
+  border-radius: 6px;
+  content: '';
+}
+
+// 擬似要素でチェックマークを指定してます。
+.check_css:before {
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+  position: absolute;
+  top: 50%;
+  left: 21px;
+  display: block;
+  margin-top: -7px;
+  width: 12px;
+  height: 25px;
+  border-right: 4px solid white;
+  border-bottom: 4px solid white;
+  content: '';
+  opacity: 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  z-index: 2;
+}
+// クリックするとopacityが0だったものがopacity1になり浮かび上がります。
+input[type=checkbox]:checked + .check_css:before {
+  opacity: 1;
+}
