@@ -39,6 +39,7 @@ gem 'erb2haml'
 gem "font-awesome-rails"
 gem 'ranked-model'
 gem 'jquery-ui-rails'
+gem 'react-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
