@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function() {
   $('.fa-plus-square').on('click', function(){
     $(this).parent().parent().parent().next('.form-controll').slideToggle(300);
   });
