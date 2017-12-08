@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   post 'tasks/:task_id/child_tasks/:id/toggle' => 'child_tasks#toggle'
 
+  get  '/signup',  to: 'users#new'
+  post '/signup',  to: 'users#create'
   resources :users
 
   # get 'effects#index'
