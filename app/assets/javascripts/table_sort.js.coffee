@@ -1,3 +1,4 @@
+# タスクの順番入れ替えのためのJS
 $ ->
   $('.table-sortable').sortable
     axis: 'y'
