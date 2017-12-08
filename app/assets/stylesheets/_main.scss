@@ -47,8 +47,9 @@ background: rgba(255,255,255,0.7);
 .form-box {
   display: inline-block;
   width: 550px;
-  padding: 10px 0 10px 15px;
+  padding: 2px 0 2px 15px;
   font-family: "Open Sans", sans;
+  font-size: 21px;
   font-weight: 400;
   color: #377D6A;
   background: #efefef;
@@ -57,7 +58,6 @@ background: rgba(255,255,255,0.7);
   outline: 0;
   text-indent: 65px; // Arbitrary.
   transition: all .3s ease-in-out;
-
   &::-webkit-input-placeholder {
     color: #efefef;
     text-indent: 0;
