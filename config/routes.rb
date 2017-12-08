@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   post 'tasks/:task_id/child_tasks/:id/toggle' => 'child_tasks#toggle'
 
+  resources :users
+
   # get 'effects#index'
   # get 'article'=> 'effects#article'
 end
