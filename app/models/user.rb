@@ -7,4 +7,5 @@ class User < ApplicationRecord
              format: { with: VALID_EMAIL_REGEX },
             # 大文字小文字を無視した一意性のバリデーション
              uniqueness: { case_sensitive: true }
+  has_secure_password
 end
