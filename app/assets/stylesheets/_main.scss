@@ -153,6 +153,7 @@ span:nth-child(2) .form-box:active{
 
 
 .task-field {
+  min-width: 1000px;
   width: 100%;
   // margin-top: 20px;
   padding-top: 180px;
@@ -328,4 +329,62 @@ span:nth-child(2) .form-box:active{
     }
   }
 }
+
+/* --------------------------------
+ * ログアウトボタン
+ * -------------------------------- */
+
+.logout-button-section {
+  min-width: 1000px;
+  width: 100%;
+  text-align: center;
+  margin: 50px 0 20px 0;
+}
+
+.logout-button{
+    display: inline-block;
+    text-decoration: none;
+    background: #377D6A;
+    color: rgba(255, 255, 255, 0.47);
+    font-weight: bold;
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 5px #377D6A;
+    border: solid 2px rgba(255, 255, 255, 0.47);
+    transition: .4s;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+}
+
+.logout-button:hover{
+    border-style: dashed;
+}
+
+/* --------------------------------
+ * footer
+ * -------------------------------- */
+
+.index-footer-fixed {
+  min-width: 1000px;
+  height: 100px;
+  z-index: 2000;
+  // border-bottom: 1px solid gray;
+  width: 100%;
+  text-align: center;
+  background: rgba(255,255,255,0.7);
+}
+
+.copyright-section {
+  p {
+    color: #807171;
+  }
+}
+
 
