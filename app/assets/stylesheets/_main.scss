@@ -2,6 +2,13 @@
 $theme-color: #377D6A;
 $box-color: #efefef;
 
+body {
+min-height: 100%;
+height: auto !important;
+height: 100%;
+position: relative;
+}
+
 
 // .index-wrapper {
 //   // height: 1000px;
@@ -14,7 +21,7 @@ $box-color: #efefef;
 .index-header-fixed {
   position: fixed;
   min-width: 1000px;
-  height: 150px;
+  height: 130px;
   z-index: 2000;
   // border-bottom: 1px solid gray;
 width: 100%;
@@ -28,7 +35,7 @@ background: rgba(255,255,255,0.7);
   color: #555555;
   font-size: 30px;
   text-align: center;
-  margin: 30px auto;
+  margin: 20px auto;
   letter-spacing: 7px;
   font-weight: bold;
 }
@@ -338,7 +345,8 @@ span:nth-child(2) .form-box:active{
   min-width: 1000px;
   width: 100%;
   text-align: center;
-  margin: 50px 0 20px 0;
+  margin-top: 50px;
+  padding-bottom: 40px;
 }
 
 .logout-button{
@@ -357,6 +365,7 @@ span:nth-child(2) .form-box:active{
     box-shadow: 0px 0px 0px 5px #377D6A;
     border: solid 2px rgba(255, 255, 255, 0.47);
     transition: .4s;
+    margin-bottom: 30px;
     a {
       text-decoration: none;
       color: white;
@@ -372,18 +381,22 @@ span:nth-child(2) .form-box:active{
  * -------------------------------- */
 
 .index-footer-fixed {
+  position: fixed;
+  bottom: 0;
   min-width: 1000px;
-  height: 100px;
+  height: 20px;
   z-index: 2000;
   // border-bottom: 1px solid gray;
   width: 100%;
   text-align: center;
-  background: rgba(255,255,255,0.7);
+  background: rgba(240,240,240,0.7);
+  padding-top: 10px;
 }
 
 .copyright-section {
   p {
     color: #807171;
+    font-size: 12px;
   }
 }
 
