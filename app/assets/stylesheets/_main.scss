@@ -35,7 +35,7 @@ background: rgba(255,255,255,0.7);
   color: #555555;
   font-size: 30px;
   text-align: center;
-  margin: 20px auto;
+  margin: 22px auto;
   letter-spacing: 7px;
   font-weight: bold;
 }
@@ -349,7 +349,7 @@ span:nth-child(2) .form-box:active{
   padding-bottom: 40px;
 }
 
-.logout-button{
+.user-button{
     display: inline-block;
     text-decoration: none;
     background: #377D6A;
@@ -365,14 +365,14 @@ span:nth-child(2) .form-box:active{
     box-shadow: 0px 0px 0px 5px #377D6A;
     border: solid 2px rgba(255, 255, 255, 0.47);
     transition: .4s;
-    margin-bottom: 30px;
+    margin: 0 10px 30px 10px;
     a {
       text-decoration: none;
       color: white;
     }
 }
 
-.logout-button:hover{
+.user-button:hover{
     border-style: dashed;
 }
 

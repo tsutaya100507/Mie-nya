@@ -16,5 +16,11 @@
 
 -# 仮置きでtaskの最下に配置しています。
 .logout-button-section
-  .logout-button
-    =link_to "LOGOUT", class: "logoutbutton"
+  - if logged_in?
+    .user-button
+      =link_to "LOGOUT", logout_path, method: :delete
+  - else
+    .user-button
+      =link_to "LOGIN", login_path
+    .user-button
+      =link_to "SIGNUP", signup_path
