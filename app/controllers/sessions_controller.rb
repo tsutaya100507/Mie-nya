@@ -3,11 +3,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # userをDBから引っ張ってくる
+    # userをDBから引っ張ってくる。
     user = User.find_by(email: params[:session][:email].downcase)
     # userがDBにいる かつ　認証が成功した場合
     if user && user.authenticate(params[:session][:password])
-
+      # SessionsHelperに定義したlog_inメソッドを呼び出し。
+      log_in user
+      redirect_to user
     else
     flash.now[:danger] = 'Invalid email/password combination'
     render 'new'
