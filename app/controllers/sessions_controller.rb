@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       # SessionsHelperに定義したlog_inメソッドを呼び出し。
       log_in user
-      redirect_to user
+      redirect_to root_url
     else
     flash.now[:danger] = 'Invalid email/password combination'
     render 'new'
@@ -18,6 +18,6 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out
-    redirect_to root_url
+    redirect_to login_url
   end
 end
