@@ -1,17 +1,23 @@
-%h1 Sign in
-
 .signup-wrapper
+  .signup-form-section
+    .title
+      = image_tag "Mienya2-logo.png", class: "title-logo"
+      / %h1.title Mienya
   .signup-form
+    %h1 Sign in
+    .transparent-bothends
     = form_for :session, url: login_path do |f|
       / = render 'shared/error_messages'
 
-      = f.label :email
-      = f.email_field :email
+      .signup-form__email.form-item
+        = f.label :email
+        = f.email_field :email, class: 'form-control'
 
-      = f.label :password
-      = f.password_field :password
+      .signup-form__password.form-item
+        = f.label :password
+        = f.password_field :password, class: 'form-control'
 
-      = f.submit "Log-in", class: "signup-button"
+        = f.submit "Log-in", class: "signup-button"
 
-    %p New user?
-    = link_to "Sign up now!", signup_path
+      .linkto-signup
+        = link_to "Sign up now!", signup_path
